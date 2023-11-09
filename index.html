@@ -10,7 +10,7 @@
         <p>[<a href="{{ url_for('logout') }}">Sign out</a>]</p>
         <p>You are signed in as {{ user_info['email'] }}</p>
         <p>Current Indian time: {{ current_time }}</p>
-        <!-- You can display the profile picture here (optional) -->
+
     {% else %}
         <form method="post" action="{{ url_for('login') }}">
             <label for="email">Gmail Address:</label>
