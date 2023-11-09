@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gmail Sign-In</title>
+</head>
+<body>
+    {% if user_info %}
+        <h1>Hello {{ user_info['name'] }}</h1>
+        <p>[<a href="{{ url_for('logout') }}">Sign out</a>]</p>
+        <p>You are signed in as {{ user_info['email'] }}</p>
+        <p>Current Indian time: {{ current_time }}</p>
+        <!-- You can display the profile picture here (optional) -->
+    {% else %}
+        <form method="post" action="{{ url_for('login') }}">
+            <label for="email">Gmail Address:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <button type="submit">Sign in</button>
+        </form>
+    {% endif %}
+</body>
+</html>
