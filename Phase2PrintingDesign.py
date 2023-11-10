@@ -1,3 +1,44 @@
+#code3
+s = "formulaqsolutions"
+n = int(input())
+
+if n % 2 == 0:
+    n = n + 1
+
+s = (s * ((n + len(s) - 1) // len(s)))[:n]
+
+for a1 in range(1, (n + 1) // 2 + 1):
+    for a2 in range((n + 1) // 2 - a1):
+        print(" ", end="")
+    for a3 in range(a1 * 2 - 1):
+        print(s[(a3 + a1-1) % len(s)],end="")
+    print()
+
+for a1 in range((n + 1) // 2 - 1, 0, -1):
+    for a2 in range((n + 1) // 2 - a1):
+        print(" ", end="")
+    for a3 in range(a1 * 2 - 1):
+        print(s[a3 + (n + 1) // 2 - a1 - 1], end="")
+    print()
+"""Output
+16
+        f
+       orm
+      rmula
+     mulaqso
+    ulaqsolut
+   laqsolution
+  aqsolutionsfo
+ qsolutionsformu
+solutionsformulaq
+ formulaqsolutio
+  ormulaqsoluti
+   rmulaqsolut
+    mulaqsolu
+     ulaqsol
+      laqso
+       aqs
+        q"""
 #code1
 s = "formulaqsolutions"
 n = int(input())
